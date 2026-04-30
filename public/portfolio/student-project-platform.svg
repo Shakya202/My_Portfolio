@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+  <title id="title">Verity academic fairness landing page screenshot style preview</title>
+  <desc id="desc">Light landing page preview for a student project intelligence and collaboration platform.</desc>
+  <defs>
+    <linearGradient id="pageBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="0.58" stop-color="#f3f8fc"/>
+      <stop offset="1" stop-color="#eef9fb"/>
+    </linearGradient>
+    <linearGradient id="wordGrad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#4b3cff"/>
+      <stop offset="0.48" stop-color="#03bfb7"/>
+      <stop offset="1" stop-color="#10a5f5"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#12213d" flood-opacity="0.16"/>
+    </filter>
+    <filter id="titleShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#152037" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="720" fill="url(#pageBg)"/>
+
+  <g opacity="0.24" stroke="#9aa9ba" stroke-width="1">
+    <path d="M28 78 160 140 212 264 96 402 232 550 410 492 520 610 655 470 784 532 928 408 1070 466 1180 318 1322 396 1480 188 1562 268" fill="none"/>
+    <path d="M160 140 322 96 410 492 528 202 655 470 742 134 928 408 1014 164 1180 318 1256 110 1480 188" fill="none"/>
+    <path d="M96 402 28 78 322 96 528 202 784 532 1014 164 1322 396 1562 268" fill="none"/>
+  </g>
+
+  <g>
+    <circle cx="28" cy="78" r="5" fill="#f6bd49"/>
+    <circle cx="160" cy="140" r="7" fill="#ff7894"/>
+    <circle cx="212" cy="264" r="5" fill="#8b6cff"/>
+    <circle cx="96" cy="402" r="5" fill="#f6bd49"/>
+    <circle cx="232" cy="550" r="6" fill="#ff7894"/>
+    <circle cx="410" cy="492" r="5" fill="#f6bd49"/>
+    <circle cx="528" cy="202" r="4" fill="#f6bd49"/>
+    <circle cx="655" cy="470" r="7" fill="#a886ff"/>
+    <circle cx="742" cy="134" r="5" fill="#ff7894"/>
+    <circle cx="928" cy="408" r="5" fill="#ff7894"/>
+    <circle cx="1014" cy="164" r="7" fill="#a886ff"/>
+    <circle cx="1180" cy="318" r="6" fill="#a886ff"/>
+    <circle cx="1256" cy="110" r="5" fill="#ff7894"/>
+    <circle cx="1322" cy="396" r="5" fill="#f6bd49"/>
+    <circle cx="1480" cy="188" r="6" fill="#ff7894"/>
+    <circle cx="1562" cy="268" r="5" fill="#f6bd49"/>
+  </g>
+
+  <g opacity="0.36" stroke="#d8e2ec" stroke-width="1">
+    <path d="M0 160H1600M0 320H1600M0 480H1600M0 640H1600"/>
+    <path d="M80 0V720M240 0V720M400 0V720M560 0V720M720 0V720M880 0V720M1040 0V720M1200 0V720M1360 0V720M1520 0V720"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="155" y="28" width="1290" height="66" rx="33" fill="#ffffff" opacity="0.92"/>
+    <rect x="1245" y="42" width="1" height="38" fill="#e6edf5"/>
+    <circle cx="202" cy="61" r="20" fill="#6659ff"/>
+    <path d="M194 52h8c3 0 5 2 5 5v13c0-3-2-5-5-5h-8zM210 52h8c3 0 5 2 5 5v13c0-3-2-5-5-5h-8z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+    <text x="232" y="70" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#17233b">Verity</text>
+    <text x="604" y="70" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#62728c">Features</text>
+    <text x="718" y="70" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#62728c">How It Works</text>
+    <text x="872" y="70" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#62728c">Pricing</text>
+    <path d="M1278 56h14m-5-7 7 7-7 7" fill="none" stroke="#62728c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1312" y="42" width="138" height="39" rx="19.5" fill="#5538f3"/>
+    <text x="1348" y="68" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Get Started</text>
+    <path d="M1332 54a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm9 15v-3a6 6 0 0 0-6-6h-1m7-10v10m-5-5h10" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(640 170)">
+    <rect x="0" y="0" width="320" height="36" rx="18" fill="#f3f7ff" stroke="#cfdcff"/>
+    <circle cx="22" cy="18" r="7" fill="#6b68ff"/>
+    <text x="38" y="24" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#4d35df">VERITY AURA INTELLIGENCE</text>
+    <path d="M294 13 300 18 294 23" fill="none" stroke="#4d35df" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g filter="url(#titleShadow)" text-anchor="middle" font-family="Inter, Arial, sans-serif">
+    <text x="800" y="333" font-size="106" font-weight="900" fill="#172136">The standard for</text>
+    <text x="800" y="438" font-size="108" font-weight="900" fill="url(#wordGrad)">academic fairness.</text>
+  </g>
+
+  <text x="800" y="505" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" fill="#64728c">
+    <tspan x="800" dy="0">Eliminate the free-rider problem. Verity triangulates GitHub commits, time</tspan>
+    <tspan x="800" dy="40">logs, and task completion into one irrefutable contribution matrix.</tspan>
+  </text>
+
+  <g filter="url(#softShadow)" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">
+    <rect x="495" y="624" width="306" height="70" rx="35" fill="#5538f3"/>
+    <text x="648" y="668" text-anchor="middle" fill="#ffffff">Start Building Teams</text>
+    <path d="M744 657h15m-6-7 8 7-8 7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="820" y="624" width="280" height="70" rx="35" fill="#f9fbff" stroke="#c8d8ff"/>
+    <text x="960" y="668" text-anchor="middle" fill="#2e3b52">See How It Works</text>
+    <path d="M1046 657 1053 664 1046 671" fill="none" stroke="#64728c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
