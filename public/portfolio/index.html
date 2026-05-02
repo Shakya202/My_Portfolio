@@ -518,56 +518,113 @@
     }
 
     /* ─── Skills Tabs ─── */
+    .skill-tabs {
+      width: fit-content;
+      margin: 2.5rem auto;
+      padding: 0.35rem;
+      border: 1px solid rgba(86, 200, 245, 0.14);
+      border-radius: 1.25rem;
+      background: rgba(2, 11, 26, 0.56);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 16px 40px rgba(0, 0, 0, 0.14);
+    }
+
     .skill-tab {
-      padding: 0.5rem 1.5rem;
-      border-radius: 2rem;
-      font-size: 0.85rem;
+      min-width: 11rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 0.9rem;
+      font-size: 0.78rem;
       font-family: 'Space Mono', monospace;
-      border: 1px solid rgba(30, 111, 255, 0.3);
-      color: #64748b;
+      border: 1px solid transparent;
+      color: #7c8ba3;
       background: transparent;
       cursor: pointer;
       transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
     }
 
     .skill-tab:hover {
-      color: #56c8f5;
-      border-color: #56c8f5;
+      color: #dbeafe;
+      background: rgba(30, 111, 255, 0.08);
     }
 
     .skill-tab.active {
       background: linear-gradient(135deg, #1e6fff, #0a3fa8);
       color: #fff;
-      border-color: #1e6fff;
+      border-color: rgba(86, 200, 245, 0.35);
+      box-shadow: 0 12px 30px rgba(30, 111, 255, 0.22);
     }
 
-    .skill-name {
-      font-size: 0.85rem;
-      color: #cbd5e1;
+    .skill-bar-item {
+      min-height: 5.75rem;
+      padding: 1rem;
+      border: 1px solid rgba(86, 200, 245, 0.11);
+      border-radius: 1rem;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+        rgba(2, 11, 26, 0.34);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
       display: flex;
       align-items: center;
     }
 
-    .skill-pct {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.8rem;
-      color: #56c8f5;
+    .skill-bar-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(86, 200, 245, 0.28);
+      background:
+        linear-gradient(135deg, rgba(30, 111, 255, 0.1), rgba(86, 200, 245, 0.035)),
+        rgba(2, 11, 26, 0.45);
+    }
+
+    .skill-bar-item>div:first-child {
+      width: 100%;
+      margin-bottom: 0 !important;
+      justify-content: flex-start;
+    }
+
+    .skill-name {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-weight: 600;
+    }
+
+    .skill-name i,
+    .skill-name>span:first-child {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0 !important;
+      border-radius: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(30, 111, 255, 0.1);
+      border: 1px solid rgba(86, 200, 245, 0.12);
     }
 
     .skill-track {
-      background: rgba(30, 111, 255, 0.08);
+      display: none;
+      margin-top: 0.9rem;
+      background: rgba(2, 11, 26, 0.55);
       border-radius: 999px;
-      height: 8px;
+      height: 10px;
       overflow: hidden;
+      border: 1px solid rgba(86, 200, 245, 0.08);
     }
 
     .skill-fill {
       height: 100%;
       width: 0%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #1e6fff, #56c8f5);
+      background: linear-gradient(90deg, #1e6fff, #4cc9f0, #00ed64);
       transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
+      box-shadow: 0 0 18px rgba(76, 201, 240, 0.32);
     }
 
     .skill-fill::after {
@@ -576,10 +633,9 @@
       right: 0;
       top: 0;
       bottom: 0;
-      width: 6px;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 0.8;
+      width: 2.5rem;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.36));
+      opacity: 0.7;
     }
 
     /* ─── Projects ─── */
@@ -663,12 +719,14 @@
 
     /* ─── Certifications ─── */
     .cert-card {
+      display: block;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 1.25rem;
       padding: 1.75rem;
       transition: all 0.4s ease;
       position: relative;
+      text-decoration: none;
     }
 
     .cert-card:hover {
@@ -735,8 +793,8 @@
     .edu-card::before {
       content: '';
       position: absolute;
-      left: 10px;
-      top: 2.5rem;
+      left: 33px;
+      top: 4.7rem;
       bottom: -2rem;
       width: 1px;
       background: linear-gradient(to bottom, #1e6fff, transparent);
@@ -747,12 +805,25 @@
     }
 
     .edu-timeline-dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+      border-radius: 1rem;
       flex-shrink: 0;
-      margin-top: 0.3rem;
-      box-shadow: 0 0 0 4px rgba(30, 111, 255, 0.2), 0 0 20px rgba(30, 111, 255, 0.4);
+      margin-top: 0.15rem;
+      padding: 0.3rem;
+      background: #fff;
+      border: 1px solid rgba(86, 200, 245, 0.22);
+      box-shadow: 0 0 0 5px rgba(30, 111, 255, 0.14), 0 16px 32px rgba(30, 111, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .edu-timeline-dot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .edu-content {
@@ -891,6 +962,19 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
 
+    .light-mode .skill-tabs {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: var(--card-border);
+    }
+
+    .light-mode .skill-name {
+      color: var(--text-main);
+    }
+
+    .light-mode .skill-track {
+      background: rgba(30, 111, 255, 0.08);
+    }
+
     .light-mode .text-slate-300,
     .light-mode .text-slate-400,
     .light-mode .text-slate-500 {
@@ -969,6 +1053,16 @@
       .project-card,
       .cert-card {
         padding: 1.25rem;
+      }
+
+      .skill-tabs {
+        width: 100%;
+        border-radius: 1rem;
+      }
+
+      .skill-tab {
+        min-width: 0;
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -1080,8 +1174,8 @@
           <div class="reveal-up opacity-0 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             style="animation-delay:0.4s">
             <!-- ✏️ EDIT: Place your CV file as "cv.pdf" in the same folder as this HTML file -->
-            <a href="Shakya_Sandali_FlowCV_Resume_2026-04-30.pdf"
-              download="Shakya_Sandali_FlowCV_Resume_2026-04-30.pdf"
+            <a href="Shakya_Sandali_FlowCV_Resume_2026-05-02.pdf"
+              download="Shakya_Sandali_FlowCV_Resume_2026-05-02.pdf"
               onclick="window.open(this.href, '_blank', 'noopener,noreferrer')" class="btn-primary group">
               <i class="fas fa-download mr-2 group-hover:animate-bounce"></i> Download CV
             </a>
@@ -1208,68 +1302,68 @@
         <h2 class="section-title">Technical Skills</h2>
       </div>
 
-      <div class="flex flex-wrap gap-3 mt-10 mb-10 justify-center reveal-up opacity-0">
-        <button class="skill-tab active" data-tab="languages">Languages</button>
-        <button class="skill-tab" data-tab="web">Web Tech</button>
-        <button class="skill-tab" data-tab="tools">Tools & Platforms</button>
+      <div class="skill-tabs flex flex-wrap gap-2 justify-center reveal-up opacity-0">
+        <button class="skill-tab active" data-tab="languages"><i class="fas fa-code"></i>Languages</button>
+        <button class="skill-tab" data-tab="web"><i class="fas fa-globe"></i>Web Tech</button>
+        <button class="skill-tab" data-tab="tools"><i class="fas fa-toolbox"></i>Tools & Platforms</button>
       </div>
 
-      <!-- ✏️ EDIT: Update skill names and percentages (data-w="XX") below -->
+      <!-- ✏️ EDIT: Update skill names and bar widths (data-w="XX") below -->
 
       <!-- Languages Tab -->
-      <div id="tab-languages" class="skill-panel grid md:grid-cols-2 gap-6 reveal-up opacity-0">
+      <div id="tab-languages" class="skill-panel grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal-up opacity-0">
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fab fa-java text-orange-400 mr-2"></i>Java</span><span class="skill-pct"></span></div>
+                class="fab fa-java text-orange-400 mr-2"></i>Java</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="85"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fab fa-python text-yellow-400 mr-2"></i>Python</span><span class="skill-pct"></span></div>
+                class="fab fa-python text-yellow-400 mr-2"></i>Python</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="80"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span
-                class="text-blue-300 mr-2 font-mono">C</span>C Language</span><span class="skill-pct"></span></div>
+                class="text-blue-300 mr-2 font-mono">C</span>C Language</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="70"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span
-                class="text-blue-400 mr-2 font-mono">C++</span>C++</span><span class="skill-pct"></span></div>
+                class="text-blue-400 mr-2 font-mono">C++</span>C++</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="65"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fab fa-js text-yellow-300 mr-2"></i>JavaScript</span><span class="skill-pct"></span></div>
+                class="fab fa-js text-yellow-300 mr-2"></i>JavaScript</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="78"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span class="mr-2 font-mono"
-                style="color:#3178c6;">TS</span>TypeScript</span><span class="skill-pct"></span></div>
+                style="color:#3178c6;">TS</span>TypeScript</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="72"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span class="mr-2 font-mono"
-                style="color:#56c8f5;">SQL</span>SQL</span><span class="skill-pct"></span></div>
+                style="color:#56c8f5;">SQL</span>SQL</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="72"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span
-                class="text-green-400 mr-2">▸</span>Spring Boot</span><span class="skill-pct"></span></div>
+                class="text-green-400 mr-2">▸</span>Spring Boot</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="70"></div>
           </div>
@@ -1277,45 +1371,45 @@
       </div>
 
       <!-- Web Tech Tab -->
-      <div id="tab-web" class="skill-panel hidden grid md:grid-cols-2 gap-6 reveal-up opacity-0">
+      <div id="tab-web" class="skill-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal-up opacity-0">
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fab fa-html5 text-orange-500 mr-2"></i>HTML</span><span class="skill-pct"></span></div>
+                class="fab fa-html5 text-orange-500 mr-2"></i>HTML</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="90"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fab fa-css3-alt text-blue-400 mr-2"></i>CSS</span><span class="skill-pct"></span></div>
+                class="fab fa-css3-alt text-blue-400 mr-2"></i>CSS</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="85"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i class="fab fa-react mr-2"
-                style="color:#56c8f5;"></i>React.js</span><span class="skill-pct"></span></div>
+                style="color:#56c8f5;"></i>React.js</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="75"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span
-                class="text-green-400 mr-2">⬡</span>Node.js</span><span class="skill-pct"></span></div>
+                class="text-green-400 mr-2">⬡</span>Node.js</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="65"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span class="mr-2"
-                style="color:#00c8f0;">▲</span>Tailwind CSS</span><span class="skill-pct"></span></div>
+                style="color:#00c8f0;">▲</span>Tailwind CSS</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="80"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span
-                class="text-blue-300 mr-2">B</span>Bootstrap</span><span class="skill-pct"></span></div>
+                class="text-blue-300 mr-2">B</span>Bootstrap</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="78"></div>
           </div>
@@ -1323,38 +1417,38 @@
       </div>
 
       <!-- Tools & Platforms Tab -->
-      <div id="tab-tools" class="skill-panel hidden grid md:grid-cols-2 gap-6 reveal-up opacity-0">
+      <div id="tab-tools" class="skill-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal-up opacity-0">
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fab fa-git-alt text-orange-500 mr-2"></i>Git & GitHub</span><span class="skill-pct"></span></div>
+                class="fab fa-git-alt text-orange-500 mr-2"></i>Git & GitHub</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="85"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><i
-                class="fas fa-code text-blue-300 mr-2"></i>VS Code</span><span class="skill-pct"></span></div>
+                class="fas fa-code text-blue-300 mr-2"></i>VS Code</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="90"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span class="mr-2"
-                style="color:#00c8f0;">🔷</span>Figma</span><span class="skill-pct"></span></div>
+                style="color:#00c8f0;">🔷</span>Figma</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="60"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span
-                class="text-green-400 mr-2">▸</span>MySQL / MongoDB</span><span class="skill-pct"></span></div>
+                class="text-green-400 mr-2">▸</span>MySQL / MongoDB</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="72"></div>
           </div>
         </div>
         <div class="skill-bar-item">
           <div class="flex justify-between mb-1"><span class="skill-name"><span class="mr-2 font-mono"
-                style="color:#56c8f5;">PG</span>PostgreSQL</span><span class="skill-pct"></span></div>
+                style="color:#56c8f5;">PG</span>PostgreSQL</span></div>
           <div class="skill-track">
             <div class="skill-fill" data-w="70"></div>
           </div>
@@ -1682,54 +1776,80 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
 
         <!-- ✏️ EDIT: Certification 1 -->
-        <div class="cert-card reveal-up opacity-0">
+        <a class="cert-card reveal-up opacity-0"
+          href="https://1drv.ms/b/c/a82d21b728216b60/IQDrGmhp83XiTJcrrV3v51GKAS5qEYIbQ7blpV12nU1dG84?e=QBVqYx"
+          target="_blank" rel="noopener noreferrer" aria-label="Open Python for Beginners certificate">
           <div class="cert-icon" style="background:rgba(0,200,240,0.12);"><i class="fab fa-python text-2xl"
               style="color:#00c8f0;"></i></div>
           <h3 class="cert-title">Python for Beginners</h3>
           <div class="cert-platform"><i class="fas fa-graduation-cap mr-1"></i> Simplilearn</div>
           <div class="cert-date">2025</div>
           <div class="cert-badge">Completed</div>
-        </div>
+        </a>
 
         <!-- ✏️ EDIT: Certification 2 -->
-        <div class="cert-card reveal-up opacity-0" style="animation-delay:0.1s">
+        <a class="cert-card reveal-up opacity-0"
+          href="https://1drv.ms/b/c/a82d21b728216b60/IQA_xKLkscanQ4P3F3y4QmaJAWPB2Kk30ST4fuCfRLCj-oY?e=if5uzj"
+          target="_blank" rel="noopener noreferrer" aria-label="Open Front End Web Development certificate"
+          style="animation-delay:0.1s">
           <div class="cert-icon" style="background:rgba(244,63,94,0.12);"><i class="fab fa-html5 text-2xl"
               style="color:#f43f5e;"></i></div>
           <h3 class="cert-title">Front End Web Development</h3>
           <div class="cert-platform"><i class="fas fa-university mr-1"></i> University of Moratuwa</div>
           <div class="cert-date">2025</div>
           <div class="cert-badge">Completed</div>
-        </div>
+        </a>
 
         <!-- ✏️ EDIT: Certification 3 -->
-        <div class="cert-card reveal-up opacity-0" style="animation-delay:0.2s">
+        <a class="cert-card reveal-up opacity-0"
+          href="https://1drv.ms/b/c/a82d21b728216b60/IQDM9gvvKdKLR4p-atPvljbUAW6YgYan5kQnrW5vd9PU8aU?e=xW4ayL"
+          target="_blank" rel="noopener noreferrer" aria-label="Open Web Design for Beginners certificate"
+          style="animation-delay:0.2s">
           <div class="cert-icon" style="background:rgba(168,85,247,0.12);"><i class="fas fa-palette text-2xl"
               style="color:#a855f7;"></i></div>
           <h3 class="cert-title">Web Design for Beginners</h3>
           <div class="cert-platform"><i class="fas fa-university mr-1"></i> University of Moratuwa</div>
           <div class="cert-date">2025</div>
           <div class="cert-badge">Completed</div>
-        </div>
+        </a>
 
         <!-- ✏️ EDIT: Certification 4 -->
-        <div class="cert-card reveal-up opacity-0" style="animation-delay:0.3s">
+        <a class="cert-card reveal-up opacity-0"
+          href="https://1drv.ms/b/c/a82d21b728216b60/IQBZe1nU2lEZQa5wtnAzU2a7AYSycHzSXBA9UQx5--YFkN8?e=jv3uYM"
+          target="_blank" rel="noopener noreferrer" aria-label="Open AI/ML Engineer Stage I certificate"
+          style="animation-delay:0.3s">
           <div class="cert-icon" style="background:rgba(0,200,240,0.08);"><i
               class="fas fa-brain  text-2xl text-green-400"></i></div>
           <h3 class="cert-title">AI/ML Engineer Stage I</h3>
           <div class="cert-platform"><i class="fas fa-university mr-1"></i> SLIIT</div>
           <div class="cert-date">2025</div>
           <div class="cert-badge">Completed</div>
-        </div>
+        </a>
 
         <!-- ✏️ EDIT: Certification 5 -->
-        <div class="cert-card reveal-up opacity-0" style="animation-delay:0.4s">
+        <a class="cert-card reveal-up opacity-0"
+          href="https://1drv.ms/b/c/a82d21b728216b60/IQAVNQDCQJhNQrJcK4ngDWSXAbuYLtcGHVDgiZ66PAHbvIg?e=jTd940"
+          target="_blank" rel="noopener noreferrer" aria-label="Open AI/ML Engineer Stage II certificate"
+          style="animation-delay:0.4s">
           <div class="cert-icon" style="background:rgba(125,211,252,0.1);"><i
               class="fas fa-robot text-2xl text-orange-400"></i></div>
           <h3 class="cert-title">AI/ML Engineer Stage II</h3>
           <div class="cert-platform"><i class="fas fa-university mr-1"></i> SLIIT</div>
           <div class="cert-date">2025</div>
           <div class="cert-badge">Completed</div>
-        </div>
+        </a>
+
+        <!-- ✏️ EDIT: Certification 6 -->
+        <a class="cert-card reveal-up opacity-0"
+          href="https://1drv.ms/b/c/a82d21b728216b60/IQDhoCnfsdFbSpHD0AoZQAwBARZ64hvRPeWTXuIQkz4DR88?e=T1vgAn"
+          target="_blank" rel="noopener noreferrer" aria-label="Open MongoDB Atlas Administrator Path certificate"
+          style="animation-delay:0.5s">
+          <div class="cert-icon" style="background:rgba(0,237,100,0.12);"><i
+              class="fas fa-database text-2xl" style="color:#00ed64;"></i></div>
+          <h3 class="cert-title">MongoDB Atlas Administrator Path</h3>
+          <div class="cert-platform"><i class="fas fa-graduation-cap mr-1"></i> MongoDB</div>
+          <div class="cert-badge">Completed</div>
+        </a>
 
       </div>
     </div>
@@ -1745,14 +1865,16 @@
 
         <!-- ✏️ EDIT: University / Degree -->
         <div class="edu-card reveal-up opacity-0">
-          <div class="edu-timeline-dot" style="background:#1e6fff;"></div>
+          <div class="edu-timeline-dot">
+            <img src="./sliit-logo-clean.png" alt="SLIIT logo" />
+          </div>
           <div class="edu-content">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
               <div>
                 <!-- ✏️ EDIT: Your degree name -->
                 <h3 class="text-white font-bold text-xl">BSc (Hons)in Information Technology</h3>
                 <!-- ✏️ EDIT: Your university and country -->
-                <p class="font-medium" style="color:#56c8f5;">Sri Lanka Institute of Information Technology · Sri Lanka
+                <p class="font-medium" style="color:#56c8f5;">Sri Lanka Institute of Information Technology, Sri Lanka
                 </p>
               </div>
               <!-- ✏️ EDIT: Your study years -->
