@@ -11,7 +11,7 @@ portfolio/
 ├── index.html       ← Main HTML file (all sections)
 ├── style.css        ← Custom CSS (animations, components, responsive)
 ├── script.js        ← JavaScript (typed text, scroll effects, skill bars)
-├── cv.pdf           ← Your CV / Resume (replace with yours)
+├── Shakya_July_Updated.pdf ← Your CV / Resume
 └── README.md        ← This file
 ```
 
@@ -80,7 +80,7 @@ Update the contact section email, LinkedIn, GitHub, and Twitter links.
 Edit the 4 project cards — update titles, descriptions, tech stacks, and GitHub/live demo links.
 
 ### 6. CV
-Replace `cv.pdf` with your actual CV file (keep the same name or update the `href` in the Download CV button).
+Replace `Shakya_July_Updated.pdf` with your actual CV file, or update the `href` in the Download CV button if you rename it.
 
 ### 7. Skills — Progress Bars
 Adjust the `data-w="85"` attribute on each `.skill-fill` div to set your proficiency percentage.
